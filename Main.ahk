@@ -63,6 +63,7 @@ if(!ErrorLevel){
 }
 
 ;if hold long enough, it will be rotate until released
+;If you see this code, you can change the LCtrl to LShift if you want to use the default
 Send, {LCtrl down}{Space down}
 KeyWait, Numpad9
 Send, {LCtrl up}{Space up}
@@ -105,16 +106,16 @@ changeSize()
 return
 
 Numpad6::		; This is for Movement Tool / Select Layer
-Send, {k}
 KeyWait, Numpad6, T0.145
 
 if(!ErrorLevel){
+	Send, {k}
 	return
 }
 
-Send, {LCtrl down} {LAlt down}
+Send, {LCtrl down}
 KeyWait, Numpad6
-Send, {LCtrl up} {LAlt up}
+Send, {LCtrl up}
 return
 
 NumpadAdd::		; This is for Lasso Tool
